@@ -1,32 +1,35 @@
-// index.js servidor Express mínimo Código 12. Servidor Express mínimo.
+// index.js — servidor Express mínimo
 const express = require('express');
 const alunosRouter = require('./alunos');
-const disciplinasRouter = require('./disciplinas');
-// Cria a instância da aplicação Express
+const instrutoresRouter = require('./instrutores');
+
 const app = express();
-// Define a porta usa variável de ambiente ou 3000 como fallback
 const PORTA = process.env.PORT || 3000;
+
 // Middleware para fazer o parse do corpo JSON das requisições
-// Sem isso, req.body será undefined em rotas POST/PUT/PATCH
 app.use(express.json());
+
 app.use('/api/alunos', alunosRouter);
-app.use('/api/disciplinas', disciplinasRouter);
-// Rota de teste responde a GET /
+app.use('/api/instrutores', instrutoresRouter);
+
+// Rota de teste
 app.get('/', (req, res) => {
-res.json({
-mensagem: 'API funcionando!',
-versao: '1.0.0',
-timestamp: new Date().toISOString()
+  res.json({
+    mensagem: 'API funcionando!',
+    versao: '1.0.0',
+    timestamp: new Date().toISOString(),
+  });
 });
-});
-// Inicia o servidor na porta especificada
+
+// Inicia o servidor
 app.listen(PORTA, () => {
-console.log("Servidor rodando em http://localhost:" + PORTA);
+  console.log(`Servidor rodando em http://localhost:${PORTA}`);
 });
-//Inicie o servidor (escolha o gerenciador que estiver usando)
-//npm run dev # com npm
-//yarn dev # com yarn
-//Teste no terminal (com curl) ou no navegador
-//curl http://localhost:3000/
-//Resposta esperada:
-//{ "mensagem": "API funcionando!", "versao": "1.0.0", "timestamp": "..." }
+
+// Dicas de execução:
+// npm run dev  # com npm
+// yarn dev     # com yarn
+// Teste:
+// curl http://localhost:3000/
+// Resposta esperada:
+// { "mensagem": "API funcionando!", "versao": "1.0.0", "timestamp": "..." }
