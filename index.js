@@ -1,7 +1,7 @@
 // index.js — servidor Express mínimo
 const express = require('express');
-const alunosRouter = require('./alunos');
-const instrutoresRouter = require('./instrutores');
+const alunosRouter = require('./backend/alunos');
+const instrutoresRouter = require('./backend/instrutores');
 
 const app = express();
 const PORTA = process.env.PORT || 3000;
@@ -13,13 +13,27 @@ app.use('/api/alunos', alunosRouter);
 app.use('/api/instrutores', instrutoresRouter);
 
 // Rota de teste
-app.get('/', (req, res) => {
-  res.json({
-    mensagem: 'API funcionando!',
-    versao: '1.0.0',
-    timestamp: new Date().toISOString(),
-  });
+app.get('/usuarios', (req, res) => {
+  
+    res.status(200).json(users);
+    
 });
+
+const users = [];
+
+app.post('/usuarios', (req, res) => {
+
+    users.push(req.body);
+    res.status(201).json(req.body);
+})
+
+app.put('/usuarios/:id', (req, res) => {
+
+
+    users.push(req.body);
+    res.status(200).json(req.body);
+
+})
 
 // Inicia o servidor
 app.listen(PORTA, () => {
@@ -31,5 +45,3 @@ app.listen(PORTA, () => {
 // yarn dev     # com yarn
 // Teste:
 // curl http://localhost:3000/
-// Resposta esperada:
-// { "mensagem": "API funcionando!", "versao": "1.0.0", "timestamp": "..." }
