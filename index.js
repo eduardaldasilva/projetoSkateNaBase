@@ -9,8 +9,8 @@ const PORTA = process.env.PORT || 3000;
 // Middleware para fazer o parse do corpo JSON das requisições
 app.use(express.json());
 
-app.use("/api/alunos", alunosRouter);
-app.use("/api/instrutores", instrutoresRouter);
+app.use("/alunos", alunosRouter);
+app.use("/instrutores", instrutoresRouter);
 
 // Inicia o servidor
 app.listen(PORTA, () => {
