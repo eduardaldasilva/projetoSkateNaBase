@@ -1,4 +1,4 @@
-const alunosModel = require("../../models/alunosModel");
+const alunosModel = require("../models/alunosModel");
 
 const listarAlunos = (req, res) => {
   const alunos = alunosModel.getAll();

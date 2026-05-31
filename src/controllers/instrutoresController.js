@@ -1,4 +1,4 @@
-const instrutoresModel = require("../../models/instrutoresModel");
+const instrutoresModel = require("../models/instrutoresModel");
 
 const listarInstrutores = (req, res) => {
   const instrutores = instrutoresModel.getAll();
