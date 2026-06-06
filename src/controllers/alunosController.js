@@ -10,6 +10,23 @@ const listarAlunos = async (req, res) => {
   }
 };
 
+const obterAluno = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const aluno = await alunosModel.obterPorId(id);
+
+    if (!aluno) {
+      return res.status(404).json({ message: "Aluno não encontrado" });
+    }
+
+    res.status(200).json(aluno);
+  } catch (erro) {
+    console.error(erro);
+    res.status(500).json({ erro: "Erro ao buscar aluno." });
+  }
+};
+
 const criarAluno = async (req, res) => {
   const {
     nome,
@@ -81,4 +98,21 @@ const atualizarAluno = async (req, res) => {
   }
 };
 
-module.exports = { listarAlunos, criarAluno, atualizarAluno };
+const excluirAluno = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const alunoExcluido = await alunosModel.excluir(id);
+
+    if (!alunoExcluido) {
+      return res.status(404).json({ message: "Aluno não encontrado" });
+    }
+
+    res.status(200).json({ message: "Aluno excluído com sucesso." });
+  } catch (erro) {
+    console.error(erro);
+    res.status(500).json({ erro: "Erro ao excluir aluno." });
+  }
+};
+
+module.exports = { listarAlunos, obterAluno, criarAluno, atualizarAluno, excluirAluno };

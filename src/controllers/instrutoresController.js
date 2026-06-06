@@ -10,6 +10,23 @@ const listarInstrutores = async (req, res) => {
   }
 };
 
+const obterInstrutor = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const instrutor = await instrutoresModel.obterPorId(id);
+
+    if (!instrutor) {
+      return res.status(404).json({ message: "Instrutor não encontrado" });
+    }
+
+    res.status(200).json(instrutor);
+  } catch (erro) {
+    console.error(erro);
+    res.status(500).json({ erro: "Erro ao buscar instrutor." });
+  }
+};
+
 const criarInstrutor = async (req, res) => {
   const { nome, status_instrutor, telefone, cep, logradouro, numero, bairro } =
     req.body;
@@ -59,4 +76,21 @@ const atualizarInstrutor = async (req, res) => {
   }
 };
 
-module.exports = { listarInstrutores, criarInstrutor, atualizarInstrutor };
+const excluirInstrutor = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const instrutorExcluido = await instrutoresModel.excluir(id);
+
+    if (!instrutorExcluido) {
+      return res.status(404).json({ message: "Instrutor não encontrado" });
+    }
+
+    res.status(200).json({ message: "Instrutor excluído com sucesso." });
+  } catch (erro) {
+    console.error(erro);
+    res.status(500).json({ erro: "Erro ao excluir instrutor." });
+  }
+};
+
+module.exports = { listarInstrutores, obterInstrutor, criarInstrutor, atualizarInstrutor, excluirInstrutor };
