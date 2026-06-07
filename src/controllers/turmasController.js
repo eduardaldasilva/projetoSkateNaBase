@@ -35,7 +35,7 @@ const criarTurma = async (req, res) => {
       data_aula,
       horario,
       qtd_vagas,
-      id_instrutor,
+      id_instrutor
     );
     res.status(201).json(novaTurma);
   } catch (erro) {
@@ -54,7 +54,7 @@ const atualizarTurma = async (req, res) => {
       data_aula,
       horario,
       qtd_vagas,
-      id_instrutor,
+      id_instrutor
     );
 
     if (!turmaAtualizada) {

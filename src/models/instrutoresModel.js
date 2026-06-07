@@ -15,7 +15,7 @@ const criar = (
   cep,
   logradouro,
   numero,
-  bairro,
+  bairro
 ) => {
   return db.one(
     "insert into instrutores(nome, status_instrutor, telefone, cep, logradouro, numero, bairro) values($1, $2, $3, $4, $5, $6, $7) returning *",
@@ -31,7 +31,7 @@ const atualizar = (
   cep,
   logradouro,
   numero,
-  bairro,
+  bairro
 ) => {
   return db.oneOrNone(
     "update instrutores set nome = $1, status_instrutor = $2, telefone = $3, cep = $4, logradouro = $5, numero = $6, bairro = $7 where id_instrutor = $8 returning *",
