@@ -68,21 +68,4 @@ const atualizarFrequencia = async (req, res) => {
   }
 };
 
-const excluirFrequencia = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const frequenciaExcluida = await frequenciaModel.excluir(id);
-
-    if (!frequenciaExcluida) {
-      return res.status(404).json({ message: "Registro não encontrado" });
-    }
-
-    res.status(200).json({ message: "Registro excluído com sucesso." });
-  } catch (erro) {
-    console.error(erro);
-    res.status(500).json({ erro: "Erro ao excluir registro." });
-  }
-};
-
-module.exports = { listarFrequencias, obterFrequencia, criarFrequencia, atualizarFrequencia, excluirFrequencia };
+module.exports = { listarFrequencias, obterFrequencia, criarFrequencia, atualizarFrequencia };

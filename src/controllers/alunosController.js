@@ -38,6 +38,7 @@ const criarAluno = async (req, res) => {
     logradouro,
     numero,
     bairro,
+    id_turma
   } = req.body;
 
   try {
@@ -51,6 +52,7 @@ const criarAluno = async (req, res) => {
       logradouro,
       numero,
       bairro,
+      id_turma
     );
     res.status(201).json(novoAluno);
   } catch (erro) {
@@ -71,6 +73,7 @@ const atualizarAluno = async (req, res) => {
     logradouro,
     numero,
     bairro,
+    id_turma
   } = req.body;
 
   try {
@@ -85,6 +88,7 @@ const atualizarAluno = async (req, res) => {
       logradouro,
       numero,
       bairro,
+      id_turma
     );
 
     if (!alunoAtualizado) {

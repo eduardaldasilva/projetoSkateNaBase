@@ -46,9 +46,10 @@ CREATE TABLE frequencia (
 
 CREATE TABLE turma (
     id_turma SERIAL,
-    id_instrutor INT,
-    data_aula TIMESTAMP,
-    qtd_vagas VARCHAR(2)
+    data_aula VARCHAR(15),
+    horario TIME,
+    qtd_vagas INT,
+    id_instrutor INT
 );
 
 ALTER TABLE alunos ADD CONSTRAINT pk_alunos PRIMARY KEY (id_aluno);

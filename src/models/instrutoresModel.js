@@ -5,7 +5,7 @@ const obterInstrutores = () => {
 };
 
 const obterPorId = (id) => {
-  return db.oneOrNone("select * from instrutores where id = $1", [id]);
+  return db.oneOrNone("select * from instrutores where id_instrutor = $1", [id]);
 };
 
 const criar = (
@@ -34,13 +34,13 @@ const atualizar = (
   bairro,
 ) => {
   return db.oneOrNone(
-    "update instrutores set nome = $1, status_instrutor = $2, telefone = $3, cep = $4, logradouro = $5, numero = $6, bairro = $7 where id = $8 returning *",
+    "update instrutores set nome = $1, status_instrutor = $2, telefone = $3, cep = $4, logradouro = $5, numero = $6, bairro = $7 where id_instrutor = $8 returning *",
     [nome, status_instrutor, telefone, cep, logradouro, numero, bairro, id],
   );
 };
 
 const excluir = (id) => {
-  return db.oneOrNone("delete from instrutores where id = $1 returning *", [
+  return db.oneOrNone("delete from instrutores where id_instrutor = $1 returning *", [
     id,
   ]);
 };

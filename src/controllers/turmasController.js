@@ -10,7 +10,7 @@ const listarTurmas = async (req, res) => {
   }
 };
 
-const obtenerTurma = async (req, res) => {
+const obterTurma = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -28,13 +28,13 @@ const obtenerTurma = async (req, res) => {
 };
 
 const criarTurma = async (req, res) => {
-  const { data_aula, horario, vagas, id_instrutor } = req.body;
+  const { data_aula, horario, qtd_vagas, id_instrutor } = req.body;
 
   try {
     const novaTurma = await turmasModel.criar(
       data_aula,
       horario,
-      vagas,
+      qtd_vagas,
       id_instrutor,
     );
     res.status(201).json(novaTurma);
@@ -46,14 +46,14 @@ const criarTurma = async (req, res) => {
 
 const atualizarTurma = async (req, res) => {
   const { id } = req.params;
-  const { data_aula, horario, vagas, id_instrutor } = req.body;
+  const { data_aula, horario, qtd_vagas, id_instrutor } = req.body;
 
   try {
     const turmaAtualizada = await turmasModel.atualizar(
       id,
       data_aula,
       horario,
-      vagas,
+      qtd_vagas,
       id_instrutor,
     );
 
@@ -85,4 +85,4 @@ const excluirTurma = async (req, res) => {
   }
 };
 
-module.exports = { listarTurmas, obtenerTurma, criarTurma, atualizarTurma, excluirTurma};
+module.exports = { listarTurmas, obterTurma, criarTurma, atualizarTurma, excluirTurma};

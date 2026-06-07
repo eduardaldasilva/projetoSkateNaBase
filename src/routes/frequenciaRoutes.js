@@ -17,11 +17,5 @@ router.put(
   autorizar("instrutor", "instrutor"),
   frequenciaController.atualizarFrequencia,
 );
-router.delete(
-  "/:id",
-  autenticar,
-  autorizar("instrutor"),
-  frequenciaController.excluirFrequencia,
-);
 
 module.exports = router;

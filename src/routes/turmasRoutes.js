@@ -4,7 +4,7 @@ const turmasController = require("../controllers/turmasController");
 const { autenticar, autorizar } = require("../middlewares/authMiddleware");
 
 router.get("/", autenticar, turmasController.listarTurmas);
-router.get("/:id", autenticar, turmasController.obtenerTurma);
+router.get("/:id", autenticar, turmasController.obterTurma);
 router.post("/", autenticar, autorizar("instrutor"), turmasController.criarTurma);
 router.put(
   "/:id",
