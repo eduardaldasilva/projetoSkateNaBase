@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS "skateNaBase";
 CREATE DATABASE "skateNaBase";
 \c "skateNaBase";
 
-CREATE TYPE status_presenca AS ENUM ('Presente', 'Ausente');
+CREATE TYPE status_frequencia AS ENUM ('Presente', 'Ausente');
 CREATE TYPE status AS ENUM ('Ativo', 'Inativo');
 
 create table usuarios (
@@ -40,8 +40,8 @@ CREATE TABLE instrutores (
 CREATE TABLE frequencia (
     id_presenca SERIAL,
     id_aluno INT,
-    data_presenca TIMESTAMP,
-    presenca status_presenca
+    data_registro TIMESTAMP,
+    status_presenca status_frequencia
 );
 
 CREATE TABLE turma (

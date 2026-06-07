@@ -8,17 +8,17 @@ const obterPorId = (id) => {
   return db.oneOrNone("select * from frequencia where id_presenca = $1", [id]);
 };
 
-const criar = (id_aluno, id_turma, status_presenca, data_registro) => {
+const criar = (id_aluno, data_registro, status_presenca) => {
   return db.one(
-    "insert into frequencia(id_aluno, id_turma, status_presenca, data_registro) values($1, $2, $3, $4) returning *",
-    [id_aluno, id_turma, status_presenca, data_registro],
+    "insert into frequencia(id_aluno, data_registro, status_presenca) values($1, $2, $3) returning *",
+    [id_aluno, data_registro, status_presenca],
   );
 };
 
-const atualizar = (id, id_aluno, id_turma, status_presenca, data_registro) => {
+const atualizar = (id, id_aluno, data_registro, status_presenca) => {
   return db.oneOrNone(
-    "update frequencia set id_aluno = $1, id_turma = $2, status_presenca = $3, data_registro = $4 where id_presenca = $5 returning *",
-    [id_aluno, id_turma, status_presenca, data_registro, id],
+    "update frequencia set id_aluno = $1, data_registro = $2, status_presenca = $3 where id_presenca = $4 returning *",
+    [id_aluno, data_registro, status_presenca, id],
   );
 };
 

@@ -1,0 +1,736 @@
+{
+	"info": {
+		"_postman_id": "486c071c-4229-4d12-8016-dee1da9abcab",
+		"name": "skateNaBase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "55547803",
+		"_collection_link": "https://contatoeduardadasilva-3697439.postman.co/workspace/Eduarda-Lazzaretti-da-Silva's-W~cf8935d5-4955-47df-8687-1f38bedb9030/collection/55547803-486c071c-4229-4d12-8016-dee1da9abcab?action=share&source=collection_link&creator=55547803"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "usuarios cadastro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"49984999999\",\n    \"senha\": \"senha1234\",\n    \"role\": \"instrutor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}usuarios/cadastrar",
+							"host": [
+								"{{URL}}usuarios"
+							],
+							"path": [
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuarios login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"49984999999\",\n    \"senha\": \"senha1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}usuarios/login",
+							"host": [
+								"{{URL}}usuarios"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Alunos",
+			"item": [
+				{
+					"name": "alunos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImFsdW5vIiwiaWF0IjoxNzgwODQyMDYzfQ.4xKZxj-v3fDKy0r3TagC092QZNJE4qJrQy5GR6wg1b0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}alunos/",
+							"host": [
+								"{{URL}}alunos"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alunos por id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImFsdW5vIiwiaWF0IjoxNzgwODQyMDYzfQ.4xKZxj-v3fDKy0r3TagC092QZNJE4qJrQy5GR6wg1b0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}alunos/1",
+							"host": [
+								"{{URL}}alunos"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alunos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0MjEzNH0.vdmvQfTBO41XIdqYI3ZKpbOCbELx52MWkXQAxy6WWIs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Teste\",\n  \"nome_responsavel\": \"Teste Responsavel\",\n  \"status_aluno\": \"Ativo\",\n  \"data_nascimento\": \"2005-08-23\",\n  \"telefone\": \"49984999999\",\n  \"cep\": \"89859-000\",\n  \"logradouro\": \"Avenida teste\",\n  \"numero\": \"1\",\n  \"bairro\": \"Centro\",\n  \"id_turma\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/alunos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"alunos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alunos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0MDUxNH0.BlHOitYlIy-CoOCqVCKqu-lJyyYvgsURvsf2xwOUY2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_aluno\": 1,\n    \"id_turma\": 1,\n    \"nome\": \"Teste da Silva\",\n    \"nome_responsavel\": \"Teste Responsavel\",\n    \"status_aluno\": \"Ativo\",\n    \"data_nascimento\": \"2005-08-23T03:00:00.000Z\",\n    \"telefone\": \"49984999999\",\n    \"cep\": \"89859-000\",\n    \"logradouro\": \"Rua teste\",\n    \"numero\": \"1\",\n    \"bairro\": \"Bairro teste\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}alunos/1",
+							"host": [
+								"{{URL}}alunos"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alunos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0MDUxNH0.BlHOitYlIy-CoOCqVCKqu-lJyyYvgsURvsf2xwOUY2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}alunos/1",
+							"host": [
+								"{{URL}}alunos"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Instrutores",
+			"item": [
+				{
+					"name": "instrutores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImFsdW5vIiwiaWF0IjoxNzgwODQyMDYzfQ.4xKZxj-v3fDKy0r3TagC092QZNJE4qJrQy5GR6wg1b0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}instrutores/",
+							"host": [
+								"{{URL}}instrutores"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "instrutores por id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImFsdW5vIiwiaWF0IjoxNzgwODQyMDYzfQ.4xKZxj-v3fDKy0r3TagC092QZNJE4qJrQy5GR6wg1b0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}instrutores/1",
+							"host": [
+								"{{URL}}instrutores"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "instrutores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0MjEzNH0.vdmvQfTBO41XIdqYI3ZKpbOCbELx52MWkXQAxy6WWIs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"test\",\n  \"status_instrutor\": \"Ativo\",\n  \"telefone\": \"4986435738\",\n  \"cep\": \"87695000\",\n  \"logradouro\": \"rua teste\",\n  \"numero\": \"49\",\n  \"bairro\": \"teste bairro\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}instrutores/",
+							"host": [
+								"{{URL}}instrutores"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "instrutores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0MDUxNH0.BlHOitYlIy-CoOCqVCKqu-lJyyYvgsURvsf2xwOUY2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"testando 1\",\n  \"status_instrutor\": \"Ativo\",\n  \"telefone\": \"4986435738\",\n  \"cep\": \"87695000\",\n  \"logradouro\": \"rua teste\",\n  \"numero\": \"49\",\n  \"bairro\": \"teste bairro\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}instrutores/1",
+							"host": [
+								"{{URL}}instrutores"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "instrutores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0MDUxNH0.BlHOitYlIy-CoOCqVCKqu-lJyyYvgsURvsf2xwOUY2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}instrutores/1",
+							"host": [
+								"{{URL}}instrutores"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Turmas",
+			"item": [
+				{
+					"name": "turmas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0Mzc5NH0.I4BckMxrESkP8dSQrpMRa7JEf7ujrLg6vwXe37xtSIk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}turmas/",
+							"host": [
+								"{{URL}}turmas"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "turmas por id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImFsdW5vIiwiaWF0IjoxNzgwODQyMDYzfQ.4xKZxj-v3fDKy0r3TagC092QZNJE4qJrQy5GR6wg1b0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}turmas/1",
+							"host": [
+								"{{URL}}turmas"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Turmas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0MjEzNH0.vdmvQfTBO41XIdqYI3ZKpbOCbELx52MWkXQAxy6WWIs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data_aula\": \"quarta-feira\",\n    \"horario\": \"14:30\",\n    \"qtd_vagas\": 10,\n    \"id_instrutor\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}turmas/",
+							"host": [
+								"{{URL}}turmas"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "turmas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0MDUxNH0.BlHOitYlIy-CoOCqVCKqu-lJyyYvgsURvsf2xwOUY2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data_aula\": \"quinta-feira\",\n    \"horario\": \"16:30\",\n    \"qtd_vagas\": 15,\n    \"id_instrutor\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}turmas/1",
+							"host": [
+								"{{URL}}turmas"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "turmas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0MDUxNH0.BlHOitYlIy-CoOCqVCKqu-lJyyYvgsURvsf2xwOUY2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}turmas/1",
+							"host": [
+								"{{URL}}turmas"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Frequencia",
+			"item": [
+				{
+					"name": "frequencia",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0Mzc5NH0.I4BckMxrESkP8dSQrpMRa7JEf7ujrLg6vwXe37xtSIk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}frequencia/",
+							"host": [
+								"{{URL}}frequencia"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "frequencia por id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImFsdW5vIiwiaWF0IjoxNzgwODQyMDYzfQ.4xKZxj-v3fDKy0r3TagC092QZNJE4qJrQy5GR6wg1b0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}frequencia/",
+							"host": [
+								"{{URL}}frequencia"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "frequencia",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0MjEzNH0.vdmvQfTBO41XIdqYI3ZKpbOCbELx52MWkXQAxy6WWIs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_aluno\": 1,\n    \"status\": \"Presente\",\n    \"data_registro\": \"12/04/2025\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}frequencia/",
+							"host": [
+								"{{URL}}frequencia"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "frequencia",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0MDUxNH0.BlHOitYlIy-CoOCqVCKqu-lJyyYvgsURvsf2xwOUY2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_aluno\": 1,\n    \"data_registro\": \"12/04/2025\",\n    \"status_presenca\": \"Presente\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}frequencia/1",
+							"host": [
+								"{{URL}}frequencia"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "dashboard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Imluc3RydXRvciIsImlhdCI6MTc4MDg0Mzc5NH0.I4BckMxrESkP8dSQrpMRa7JEf7ujrLg6vwXe37xtSIk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}dashboard/",
+							"host": [
+								"{{URL}}dashboard"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3000/"
+		}
+	]
+}

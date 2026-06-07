@@ -12,14 +12,10 @@ const listarFrequencias = async (req, res) => {
 
 const obterFrequencia = async (req, res) => {
   const { id } = req.params;
-
   try {
     const frequencia = await frequenciaModel.obterPorId(id);
-
-    if (!frequencia) {
+    if (!frequencia)
       return res.status(404).json({ message: "Registro não encontrado" });
-    }
-
     res.status(200).json(frequencia);
   } catch (erro) {
     console.error(erro);
@@ -28,14 +24,12 @@ const obterFrequencia = async (req, res) => {
 };
 
 const criarFrequencia = async (req, res) => {
-  const { id_aluno, id_turma, status_presenca, data_registro } = req.body;
-
+  const { id_aluno, data_registro, status_presenca } = req.body;
   try {
     const novaFrequencia = await frequenciaModel.criar(
       id_aluno,
-      id_turma,
-      status_presenca,
       data_registro,
+      status_presenca,
     );
     res.status(201).json(novaFrequencia);
   } catch (erro) {
@@ -46,25 +40,20 @@ const criarFrequencia = async (req, res) => {
 
 const atualizarFrequencia = async (req, res) => {
   const { id } = req.params;
-  const { id_aluno, id_turma, status_presenca, data_registro } = req.body;
-
+  const { id_aluno, data_registro, status_presenca } = req.body;
   try {
     const frequenciaAtualizada = await frequenciaModel.atualizar(
       id,
       id_aluno,
-      id_turma,
-      status_presenca,
       data_registro,
+      status_presenca,
     );
-
-    if (!frequenciaAtualizada) {
+    if (!frequenciaAtualizada)
       return res.status(404).json({ message: "Registro não encontrado" });
-    }
-
     res.status(200).json(frequenciaAtualizada);
   } catch (erro) {
     console.error(erro);
-    res.status(500).json({ erro: "Erro ao atualizar registro de presença." });
+    res.status(500).json({ erro: "Erro ao atualizar registro." });
   }
 };
 
