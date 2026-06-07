@@ -5,17 +5,22 @@ const { autenticar, autorizar } = require("../middlewares/authMiddleware");
 
 router.get("/", autenticar, alunosController.listarAlunos);
 router.get("/:id", autenticar, alunosController.obterAluno);
-router.post("/", autenticar, autorizar("admin"), alunosController.criarAluno);
+router.post(
+  "/",
+  autenticar,
+  autorizar("instrutor"),
+  alunosController.criarAluno,
+);
 router.put(
   "/:id",
   autenticar,
-  autorizar("admin"),
+  autorizar("instrutor"),
   alunosController.atualizarAluno,
 );
 router.delete(
   "/:id",
   autenticar,
-  autorizar("admin"),
+  autorizar("instrutor"),
   alunosController.excluirAluno,
 );
 
