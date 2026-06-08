@@ -6,7 +6,7 @@
 
 ## Requests de exemplos:
 
-- Optamos por deixar um arquivo do postman com os principais requests
+- Optamos por deixar um arquivo do Postman com os principais requests
 
 🔗 [Arquivo de requests](skateNaBase.postman_collection.json)  
 
