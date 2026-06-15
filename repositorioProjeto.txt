@@ -1,0 +1,6 @@
+Entrega I - Prog II
+
+Alunos: Eduarda Lazzaretti da Silva (2023002925) e Yuri Campiol Verruck (20230002970)
+
+- link do github: https://github.com/eduardaldasilva/projetoSkateNaBase
+- hash: a3c665252e4929931cec1197f074d0e821eb208e
