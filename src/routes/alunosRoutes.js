@@ -3,25 +3,25 @@ const router = express.Router();
 const alunosController = require("../controllers/alunosController");
 const { autenticar, autorizar } = require("../middlewares/authMiddleware");
 
-router.get("/", autenticar, alunosController.listarAlunos);
-router.get("/:id", autenticar, alunosController.obterAluno);
+router.get("/", autenticar, alunosController.obter);
+router.get("/:id", autenticar, alunosController.obterPorId);
 router.post(
   "/",
   autenticar,
   autorizar("instrutor"),
-  alunosController.criarAluno,
+  alunosController.criar
 );
 router.put(
   "/:id",
   autenticar,
   autorizar("instrutor"),
-  alunosController.atualizarAluno,
+  alunosController.atualizar
 );
 router.delete(
   "/:id",
   autenticar,
   autorizar("instrutor"),
-  alunosController.excluirAluno,
+  alunosController.excluir
 );
 
 module.exports = router;

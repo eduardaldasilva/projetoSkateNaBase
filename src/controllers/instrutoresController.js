@@ -1,6 +1,6 @@
 const instrutoresModel = require("../models/instrutoresModel");
 
-const listarInstrutores = async (req, res) => {
+const obter = async (req, res) => {
   try {
     const instrutores = await instrutoresModel.obterInstrutores();
     res.status(200).json(instrutores);
@@ -10,7 +10,7 @@ const listarInstrutores = async (req, res) => {
   }
 };
 
-const obterInstrutor = async (req, res) => {
+const obterPorId = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -27,7 +27,7 @@ const obterInstrutor = async (req, res) => {
   }
 };
 
-const criarInstrutor = async (req, res) => {
+const criar = async (req, res) => {
   const { nome, status_instrutor, telefone, cep, logradouro, numero, bairro } =
     req.body;
 
@@ -39,7 +39,7 @@ const criarInstrutor = async (req, res) => {
       cep,
       logradouro,
       numero,
-      bairro,
+      bairro
     );
     res.status(201).json(novoInstrutor);
   } catch (erro) {
@@ -48,7 +48,7 @@ const criarInstrutor = async (req, res) => {
   }
 };
 
-const atualizarInstrutor = async (req, res) => {
+const atualizar = async (req, res) => {
   const { id } = req.params;
   const { nome, status_instrutor, telefone, cep, logradouro, numero, bairro } =
     req.body;
@@ -62,7 +62,7 @@ const atualizarInstrutor = async (req, res) => {
       cep,
       logradouro,
       numero,
-      bairro,
+      bairro
     );
 
     if (!instrutorAtualizado) {
@@ -76,7 +76,7 @@ const atualizarInstrutor = async (req, res) => {
   }
 };
 
-const excluirInstrutor = async (req, res) => {
+const excluir = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -93,4 +93,4 @@ const excluirInstrutor = async (req, res) => {
   }
 };
 
-module.exports = { listarInstrutores, obterInstrutor, criarInstrutor, atualizarInstrutor, excluirInstrutor };
+module.exports = { obter, obterPorId, criar, atualizar, excluir };

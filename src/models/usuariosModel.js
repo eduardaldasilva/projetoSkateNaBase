@@ -7,7 +7,7 @@ const obterLogin = (login) => {
 const criar = (login, senha, role) => {
   return db.one(
     "insert into usuarios(login, senha, role) values($1, $2, $3) returning id, login, role",
-    [login, senha, role],
+    [login, senha, role]
   );
 };
 

@@ -10,13 +10,13 @@ router.put(
   "/:id",
   autenticar,
   autorizar("instrutor"),
-  turmasController.atualizarTurma,
+  turmasController.atualizarTurma
 );
 router.delete(
   "/:id",
   autenticar,
   autorizar("instrutor"),
-  turmasController.excluirTurma,
+  turmasController.excluirTurma
 );
 
 module.exports = router;

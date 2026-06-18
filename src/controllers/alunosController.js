@@ -1,6 +1,6 @@
 const alunosModel = require("../models/alunosModel");
 
-const listarAlunos = async (req, res) => {
+const obter = async (req, res) => {
   try {
     const alunos = await alunosModel.obterAlunos();
     res.status(200).json(alunos);
@@ -10,7 +10,7 @@ const listarAlunos = async (req, res) => {
   }
 };
 
-const obterAluno = async (req, res) => {
+const obterPorId = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -27,7 +27,7 @@ const obterAluno = async (req, res) => {
   }
 };
 
-const criarAluno = async (req, res) => {
+const criar = async (req, res) => {
   const {
     nome,
     nome_responsavel,
@@ -61,7 +61,7 @@ const criarAluno = async (req, res) => {
   }
 };
 
-const atualizarAluno = async (req, res) => {
+const atualizar = async (req, res) => {
   const { id } = req.params;
   const {
     nome,
@@ -102,7 +102,7 @@ const atualizarAluno = async (req, res) => {
   }
 };
 
-const excluirAluno = async (req, res) => {
+const excluir = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -119,4 +119,4 @@ const excluirAluno = async (req, res) => {
   }
 };
 
-module.exports = { listarAlunos, obterAluno, criarAluno, atualizarAluno, excluirAluno };
+module.exports = { obter, obterPorId, criar, atualizar, excluir };

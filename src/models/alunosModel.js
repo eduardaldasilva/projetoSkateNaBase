@@ -1,6 +1,6 @@
 const db = require("../../config/pgpConnection");
 
-const obterAlunos = () => {
+const obter = () => {
   return db.any("select * from alunos");
 };
 
@@ -29,7 +29,7 @@ const criar = (
       numero,
       bairro,
       id_turma
-    ],
+    ]
   );
 };
 
@@ -51,7 +51,7 @@ const atualizar = (
   id_turma
 ) => {
   return db.oneOrNone(
-    "update alunos set nome = $1, nome_responsavel = $2, status_aluno = $3, data_nascimento = $4, telefone = $5, cep = $6, logradouro = $7, numero = $8, bairro = $9, id_turma = $10 where id_aluno = $10 returning *",
+    "update alunos set nome = $1, nome_responsavel = $2, status_aluno = $3, data_nascimento = $4, telefone = $5, cep = $6, logradouro = $7, numero = $8, bairro = $9, id_turma = $10 where id_aluno = $11 returning *",
     [
       nome,
       nome_responsavel,
@@ -64,7 +64,7 @@ const atualizar = (
       bairro,
       id_turma,
       id
-    ],
+    ]
   );
 };
 
@@ -72,4 +72,4 @@ const excluir = (id) => {
   return db.oneOrNone("delete from alunos where id_aluno = $1 returning *", [id]);
 };
 
-module.exports = { obterAlunos, obterPorId, criar, atualizar, excluir };
+module.exports = { obter, obterPorId, criar, atualizar, excluir };

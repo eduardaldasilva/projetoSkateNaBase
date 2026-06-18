@@ -1,8 +1,8 @@
-const frequenciaModel = require("../models/frequenciaModel");
+const frequenciasModel = require("../models/frequenciasModel");
 
-const listarFrequencias = async (req, res) => {
+const obter = async (req, res) => {
   try {
-    const frequencias = await frequenciaModel.obterFrequencias();
+    const frequencias = await frequenciasModel.obter();
     res.status(200).json(frequencias);
   } catch (erro) {
     console.error(erro);
@@ -10,10 +10,10 @@ const listarFrequencias = async (req, res) => {
   }
 };
 
-const obterFrequencia = async (req, res) => {
+const obterPorId = async (req, res) => {
   const { id } = req.params;
   try {
-    const frequencia = await frequenciaModel.obterPorId(id);
+    const frequencia = await frequenciasModel.obterPorId(id);
     if (!frequencia)
       return res.status(404).json({ message: "Registro não encontrado" });
     res.status(200).json(frequencia);
@@ -23,13 +23,13 @@ const obterFrequencia = async (req, res) => {
   }
 };
 
-const criarFrequencia = async (req, res) => {
+const criar = async (req, res) => {
   const { id_aluno, data_registro, status_presenca } = req.body;
   try {
-    const novaFrequencia = await frequenciaModel.criar(
+    const novaFrequencia = await frequenciasModel.criar(
       id_aluno,
       data_registro,
-      status_presenca,
+      status_presenca
     );
     res.status(201).json(novaFrequencia);
   } catch (erro) {
@@ -38,15 +38,15 @@ const criarFrequencia = async (req, res) => {
   }
 };
 
-const atualizarFrequencia = async (req, res) => {
+const atualizar = async (req, res) => {
   const { id } = req.params;
   const { id_aluno, data_registro, status_presenca } = req.body;
   try {
-    const frequenciaAtualizada = await frequenciaModel.atualizar(
+    const frequenciaAtualizada = await frequenciasModel.atualizar(
       id,
       id_aluno,
       data_registro,
-      status_presenca,
+      status_presenca
     );
     if (!frequenciaAtualizada)
       return res.status(404).json({ message: "Registro não encontrado" });
@@ -57,4 +57,4 @@ const atualizarFrequencia = async (req, res) => {
   }
 };
 
-module.exports = { listarFrequencias, obterFrequencia, criarFrequencia, atualizarFrequencia };
+module.exports = { obter, obterPorId, criar, atualizar };
