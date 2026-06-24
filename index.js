@@ -6,6 +6,9 @@ const dashboardRoutes = require("./src/routes/dashboardRoutes");
 const frequenciasRoutes = require("./src/routes/frequenciasRoutes");
 const turmasRoutes = require("./src/routes/turmasRoutes");
 const authRoutes = require("./src/routes/authRoutes");
+const noticiasRoutes = require("./src/routes/noticiasRoutes");
+const criteriosRoutes = require("./src/routes/criteriosRoutes");
+const avaliacoesRoutes = require("./src/routes/avaliacoesRoutes");
 
 const app = express();
 const PORTA = process.env.PORT || 3000;
@@ -18,7 +21,10 @@ app.use("/instrutores", instrutoresRouter);
 app.use("/turmas", turmasRoutes);
 app.use("/frequencia", frequenciasRoutes);
 app.use("/dashboard", dashboardRoutes);
-app.use("/usuarios", authRoutes);       
+app.use("/usuarios", authRoutes);
+app.use("/noticias", noticiasRoutes);
+app.use("/criterios", criteriosRoutes);   
+app.use("/avaliacoes", avaliacoesRoutes);           
 
 // Inicia o servidor
 app.listen(PORTA, () => {

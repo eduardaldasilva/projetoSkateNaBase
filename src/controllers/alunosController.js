@@ -2,7 +2,7 @@ const alunosModel = require("../models/alunosModel");
 
 const obter = async (req, res) => {
   try {
-    const alunos = await alunosModel.obterAlunos();
+    const alunos = await alunosModel.obter();
     res.status(200).json(alunos);
   } catch (erro) {
     console.error(erro);

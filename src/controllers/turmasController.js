@@ -1,8 +1,8 @@
 const turmasModel = require("../models/turmasModel");
 
-const listarTurmas = async (req, res) => {
+const obter = async (req, res) => {
   try {
-    const turmas = await turmasModel.obterTurmas();
+    const turmas = await turmasModel.obter();
     res.status(200).json(turmas);
   } catch (erro) {
     console.error(erro);
@@ -10,7 +10,7 @@ const listarTurmas = async (req, res) => {
   }
 };
 
-const obterTurma = async (req, res) => {
+const obterPorId = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -27,7 +27,7 @@ const obterTurma = async (req, res) => {
   }
 };
 
-const criarTurma = async (req, res) => {
+const criar = async (req, res) => {
   const { data_aula, horario, qtd_vagas, id_instrutor } = req.body;
 
   try {
@@ -44,7 +44,7 @@ const criarTurma = async (req, res) => {
   }
 };
 
-const atualizarTurma = async (req, res) => {
+const atualizar = async (req, res) => {
   const { id } = req.params;
   const { data_aula, horario, qtd_vagas, id_instrutor } = req.body;
 
@@ -68,7 +68,7 @@ const atualizarTurma = async (req, res) => {
   }
 };
 
-const excluirTurma = async (req, res) => {
+const excluir = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -85,4 +85,4 @@ const excluirTurma = async (req, res) => {
   }
 };
 
-module.exports = { listarTurmas, obterTurma, criarTurma, atualizarTurma, excluirTurma};
+module.exports = { obter, obterPorId, criar, atualizar, excluir};

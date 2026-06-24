@@ -1,6 +1,6 @@
 const db = require("../../config/pgpConnection");
 
-const obterTurmas = () => {
+const obter = () => {
   return db.any("select * from turmas");
 };
 
@@ -26,4 +26,4 @@ const excluir = (id) => {
   return db.oneOrNone("delete from turmas where id_turma = $1 returning *", [id]);
 };
 
-module.exports = { obterTurmas, obterPorId, criar, atualizar, excluir };
+module.exports = { obter, obterPorId, criar, atualizar, excluir };

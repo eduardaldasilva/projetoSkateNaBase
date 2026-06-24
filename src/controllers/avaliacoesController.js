@@ -1,4 +1,4 @@
-const avaliacoesModel = require("../models/AvaliacoesModel");
+const avaliacoesModel = require("../models/avaliacoesModel");
 
 const obter = async (req, res) => {
   try {
@@ -26,12 +26,12 @@ const obterPorId = async (req, res) => {
 
 const criar = async (req, res) => {
   try {
-    const { data_avaliacao, id_aluno, criterios } = req.body;
+    const { data_avaliacao, id_aluno, pontuacoes } = req.body;
 
     const novaAvaliacao = await avaliacoesModel.criar(
       data_avaliacao,
       id_aluno,
-      criterios
+      pontuacoes,
     );
 
     return res.status(201).json(novaAvaliacao);

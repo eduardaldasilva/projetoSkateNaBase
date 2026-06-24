@@ -10,7 +10,7 @@ CREATE TYPE criterio AS ENUM ('Manobras', 'Estilo', 'Responsabilidade', 'Familia
 CREATE TABLE usuarios (
     id SERIAL,
     login VARCHAR(150) UNIQUE NOT NULL,
-    senha VARCHAR(10) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
     role VARCHAR(14) NOT NULL
 );
 
@@ -40,7 +40,7 @@ CREATE TABLE instrutores (
 );
 
 CREATE TABLE frequencias (
-    id_presenca SERIAL,aluno
+    id_presenca SERIAL,
     id_aluno INT,
     data_registro DATE, --analisar isso depois
     status_presenca status_frequencia
@@ -51,7 +51,7 @@ CREATE TABLE turmas (
     data_aula VARCHAR(15),
     horario TIME,
     qtd_vagas INT,
-    id_instrutor INT
+    id_instrutor INT,
     nivel nivel_turma
 );
 
