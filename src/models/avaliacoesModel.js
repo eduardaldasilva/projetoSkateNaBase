@@ -16,12 +16,11 @@ const criar = async (data_avaliacao, id_aluno, pontuacoes) => {
     soma += notas[i];
   }
 
-  const media = parseInt(soma / notas.length, 10);
   let nivel;
 
-  if (media <= 18) {
+  if (soma <= 90) {
     nivel = "Iniciante";
-  } else if (media <= 28) {
+  } else if (soma <= 120) {
     nivel = "Intermediário";
   } else {
     nivel = "Avançado";

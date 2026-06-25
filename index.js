@@ -1,5 +1,6 @@
 // index.js — servidor Express mínimo
 const express = require("express");
+const path = require('path');
 const alunosRouter = require("./src/routes/alunosRoutes");
 const instrutoresRouter = require("./src/routes/instrutoresRoutes");
 const dashboardRoutes = require("./src/routes/dashboardRoutes");
@@ -24,7 +25,9 @@ app.use("/dashboard", dashboardRoutes);
 app.use("/usuarios", authRoutes);
 app.use("/noticias", noticiasRoutes);
 app.use("/criterios", criteriosRoutes);   
-app.use("/avaliacoes", avaliacoesRoutes);           
+app.use("/avaliacoes", avaliacoesRoutes);    
+
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Inicia o servidor
 app.listen(PORTA, () => {

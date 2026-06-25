@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.fundo {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/fundoAzul.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tela {
+    width: 470px;
+    height: 500px;
+    background: #FFF;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.titulo {
+    color: #1C1C1C;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -1.28px;
+    transform: translateY(-85px);
+}
+
+.logo {
+
+    width: 274.807px;
+    height: 135px;
+    background-image: url('../../assets/logo.png');
+    transform: translateY(-85px);
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    transform: translateY(-145px);
+}
+
+.botao-criar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 8px;
+    background: #1C1C1C;
+    color: #FFF;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.botao-entrar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 8px;
+    background: #1C1C1C;
+    color: #FFF;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.botao-transparente {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    font-size: 16px;
+    transform: translateY(-150px);
+}
+
+.label1 {
+    display: flex;
+    width: 410px;
+    padding: 12px 12px;
+    align-items: flex-start;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+    background: #FFF;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transform: translateY(-125px);
+}
+
+.label2 {
+    display: flex;
+    width: 410px;
+    padding: 12px 12px;
+    align-items: flex-start;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+    background: #FFF;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transform: translateY(-155px);
+}
+
+.field1 {
+    width: 427px;
+    padding: 12px 12px;
+    text-align: left;
+    color: #000;
+    font-size: 16px;
+    line-height: 10%;
+    transform: translateY(-105px);
+}
+
+.field2 {
+    width: 427px;
+    padding: 12px 12px;
+    text-align: left;
+    color: #000;
+    font-size: 16px;
+    line-height: 10%;
+    transform: translateY(-135px);
+}
