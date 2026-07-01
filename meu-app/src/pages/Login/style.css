@@ -1,0 +1,64 @@
+.logo {
+    width: 350px;
+    position: fixed;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.modalLogin {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFF;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 12px;
+}
+
+.titulo {
+    color: #1C1C1C;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.camposLogin {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.camposLogin label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+}
+
+.camposLogin input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.botaoEntrar button {
+    width: 100%;
+    border-radius: 8px;
+    background: #1C1C1C;
+    color: #FFF;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    border: none;
+    padding: 16px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
