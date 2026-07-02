@@ -9,7 +9,7 @@ CREATE TYPE criterio AS ENUM ('Manobras', 'Estilo', 'Responsabilidade', 'Familia
 
 CREATE TABLE usuarios (
     id SERIAL,
-    login VARCHAR(150) UNIQUE NOT NULL,
+    telefone VARCHAR(150) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL,
     role VARCHAR(14) NOT NULL
 );

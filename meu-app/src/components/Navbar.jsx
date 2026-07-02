@@ -1,13 +1,19 @@
 import Logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
 
-  if (location.pathname === "/login") {
+  if (location.pathname === "/login" || location.pathname === "/") {
     return null;
   }
+
+  const handleSair = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
   return (
     <nav className="navbar">
       <img className="navbar-logo" src={Logo} alt="Logo Skate na Base" />
@@ -25,12 +31,14 @@ export function Navbar() {
         <li>
           <Link to="/sobre">Notícias</Link>
         </li>
-               <li>
+        <li>
           <Link to="/sobre">Usuários</Link>
         </li>
       </ul>
 
-      <button className="botao-sair">Sair</button>
+      <button className="botao-sair" onClick={handleSair}>
+        Sair
+      </button>
     </nav>
   );
 }

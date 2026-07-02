@@ -1,24 +1,50 @@
 import { useState } from "react";
 import { SaveButton } from "../../components/SaveButton";
-import { Home } from "../Home/home";
+import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import "./style.css";
 
 export function Login() {
-  const [isLogged, setIsLogged] = useState(false);
   const [telefone, setTelefone] = useState("");
   const [senha, setSenha] = useState("");
+  
+  const navigate = useNavigate();
 
-  if (isLogged) {
-    return <Home />;
-  }
+  const handleEntrar = async (e) => {
+    e.preventDefault();
+
+    try {
+      const resposta = await fetch("/usuarios/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ telefone, senha }),
+      });
+
+      if (resposta.ok) {
+        const dados = await resposta.json();
+
+        localStorage.setItem("token", dados.token);
+
+        console.log("Login feito com sucesso!");
+        
+        navigate("/home"); 
+      } else {
+        alert("Telefone ou senha incorretos.");
+      }
+    } catch (erro) {
+      console.error("Erro ao tentar conectar com o servidor:", erro);
+      alert("O servidor está fora do ar.");
+    }
+  };
 
   return (
     <>
       <img className="logo" src={Logo} alt="Logo Skate na Base" />
 
-      <form className="modalLogin">
-        <div className="titulo">
+      <form className="modalLogin" onSubmit={handleEntrar}>
+        <div className="tituloLogin">
           <h1>Entrar</h1>
         </div>
 

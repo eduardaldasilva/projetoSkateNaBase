@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const dashboardController = require("../controllers/dashboardController");
-const { autenticar, autorizar } = require("../middlewares/authMiddleware");
+const { autenticar } = require("../middlewares/authMiddleware");
 
 router.get("/", autenticar, dashboardController.obterDash);
 
